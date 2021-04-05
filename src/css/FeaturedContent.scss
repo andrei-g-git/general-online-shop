@@ -1,0 +1,10 @@
+@import "Variables.scss";
+
+#product-grid{
+    display: grid;
+    grid-template-columns: $product-card-fr-width $product-card-fr-width;
+    //grid-template-rows: 1fr;//$product-card-fr-height;
+    margin: 1rem 1rem;
+    gap: 2rem;
+    padding: 0;
+}
