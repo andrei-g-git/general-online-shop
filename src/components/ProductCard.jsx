@@ -8,7 +8,7 @@ function ProductCard(props) {
     return (
         <Link className="product-card"
             role="button"
-            to={"/products/" + formatWithHyphen(props.product.title)}
+            to={"/products/" + props.product.id/* formatWithHyphen(props.product.title) */}
             onClick={() => handleCardClick(props)}
         >
             <div className="product-pic-container">
@@ -30,7 +30,7 @@ const handleCardClick = (props) => {
     props.notify(props.product.id);
 }
 
-const formatWithHyphen = (productTitle) => {
+const formatWithHyphen = (productTitle) => { //damn I actually don't need this...
     //ew ew ewww regex get it off getitoofffff!!
     const firstPass = productTitle.replace(/ /g, "-");
     const secondPass = firstPass.replace(/\./g, "-");

@@ -4,6 +4,10 @@ import FeaturedContent from './FeaturedContent';
 import Footer from './Footer';
 import * as actions from '../js/actions';
 import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
+
+//test
+import ProductPage from '../routes/ProductPage';
 
 let $ = require('jquery');
 
@@ -28,34 +32,39 @@ class Main extends Component {
         return (
             <div>
                 <Navbar></Navbar>
-                    <FeaturedContent
-                        products={this.props.products}
-                        currencyPrefix={this.currency.prefix} //I actually don't mind doing this if it's just 1 or two levels down
-                    >
-                    </FeaturedContent>
+                <Switch>
+                    <Route exact path="/">
+                        <FeaturedContent
+                            products={this.props.products}
+                            currencyPrefix={this.currency.prefix} //I actually don't mind doing this if it's just 1 or two levels down
+                        >
+                        </FeaturedContent>
+                    </Route>
 
-                    <button style={{position: 'fixed', top: 0, zIndex: 9999}}
-                        onClick={this.handleClickDelete}
-                    >
-                        Id Click
-                    </button>
+                    <Route path="/products/:id"
+                        render={routeProps => {
+                            const intParamId = parseInt(routeProps.match.params.id);
+                            const products = this.props.products;
+                            const productsArrayWithOneElement = products   
+                                .filter(product => product.id === intParamId);
+                            const product = productsArrayWithOneElement[0];
+
+                            return typeof product !== "undefined"
+                                ? (
+                                    <ProductPage
+                                        currencyPrefix = {this.props.currencyPrefix}
+                                        product={product}
+                                    />
+                                )
+                                :
+                                <div></div>
+                        }}
+                    />
+
+                </Switch>
+
                 <Footer></Footer>
 
-                {
-                    this.state.testProduct !== {}
-                        ? 
-                        <div>
-                            <img src={this.state.testProduct.image}
-                                alt="n/a"
-                                width='200px'
-                                style={{position: 'fixed', top: 0, right: 0, zIndex: 9999}}
-                            />
-
-                            <h1>{this.state.testProduct.description}</h1>
-                        </div>
-                        :
-                        <div></div>
-                }
             </div>
         )
     }
@@ -73,17 +82,17 @@ class Main extends Component {
         console.log(this.state.testProduct.description)
     }
 
-    handleClickDelete = () => {
-        $.ajax({
-            url: "/api/products/3",
-            type: "GET",
-            success: (response) => {
-                this.setState({testProduct: response});
-                console.log(response.description) //async, so it doesn't get anything yet?
-            },
-            dataType: "json"
-        })        
-    }
+    // handleClickDelete = () => {
+    //     $.ajax({
+    //         url: "/api/products/3",
+    //         type: "GET",
+    //         success: (response) => {
+    //             this.setState({testProduct: response});
+    //             console.log(response.description) //async, so it doesn't get anything yet?
+    //         },
+    //         dataType: "json"
+    //     })        
+    // }
 }
 
 const mapStateToProps = (state) => {
