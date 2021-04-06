@@ -1,9 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/ProductCard.scss';
+
+let $ = require('jquery');
 
 function ProductCard(props) {
     return (
-        <div className="product-card">
+        <Link className="product-card"
+            role="button"
+            to={"/products/" + formatWithHyphen(props.product.title)}
+            onClick={() => handleCardClick(props)}
+        >
             <div className="product-pic-container">
                 <img className="product-pic" 
                     src={props.product.image} 
@@ -15,8 +22,19 @@ function ProductCard(props) {
                 <h4 className="product-price">{props.currencyPrefix + props.product.price}</h4>
             </div>
             
-        </div>
+        </Link>
     )
+}
+
+const handleCardClick = (props) => {
+    props.notify(props.product.id);
+}
+
+const formatWithHyphen = (productTitle) => {
+    //ew ew ewww regex get it off getitoofffff!!
+    const firstPass = productTitle.replace(/ /g, "-");
+    const secondPass = firstPass.replace(/\./g, "-");
+    return secondPass.replace(/,/g, "-"); 
 }
 
 export default ProductCard;

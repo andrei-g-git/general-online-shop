@@ -1,0 +1,14 @@
+@import 'Variables.scss';
+
+#nav-bar{
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    background-color: $primary-color;
+    width: 100vw;
+    height: $post-navbar-y-offset;
+    position: fixed;
+    z-index: $standard-overlay-z-index;
+    margin: 0;
+    padding: $navbar-padding;
+}
