@@ -6,13 +6,10 @@ import * as actions from '../js/actions';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { formatWithHyphen } from '../js/format';
-//test
 import ProductPage from '../routes/ProductPage';
+import UserLogin from '../routes/UserLogin';
 
 let $ = require('jquery');
-
-//const CurrencyContext = React.createContext();
-
 class Main extends Component {
     constructor(){
         super();
@@ -30,8 +27,13 @@ class Main extends Component {
 
     render() {
         return (
-            <div>
-                <Navbar></Navbar>
+            <div id="main"
+                onTouchStart={this.props.handleTouchStart}
+                onTouchMove={this.props.handleTouchMove}
+                onTouchEnd={this.handleTouchEnd}
+            >
+                <Navbar navSliderOpen={this.props.navSliderOpen}></Navbar>
+
                 <Switch>
                     <Route exact path="/">
                         <FeaturedContent
@@ -62,6 +64,12 @@ class Main extends Component {
                         }}
                     />
 
+                    <Route path="/login">
+                        <UserLogin awefeawf={345}>
+
+                        </UserLogin>
+                    </Route>
+
                 </Switch>
 
                 <Footer></Footer>
@@ -79,10 +87,6 @@ class Main extends Component {
         })
     }
 
-    componentDidUpdate(){
-        console.log(this.state.testProduct.description)
-    }
-
     // handleClickDelete = () => {
     //     $.ajax({
     //         url: "/api/products/3",
@@ -94,19 +98,57 @@ class Main extends Component {
     //         dataType: "json"
     //     })        
     // }
+    handleTouchEnd = () => {
+        const startX = this.props.touchStartX;
+        const moveX = this.props.touchMoveX;
+
+        if((startX < 90) && (startX + 100) < moveX){
+            console.log("right");
+
+            this.props.openNavSlider();
+
+        } else if((startX - 100) > moveX){
+            console.log("left");
+
+            this.props.closeNavSlider(); //   ?
+        }
+    }
 }
 
 const mapStateToProps = (state) => {
     return {
-        products: state.databaseReducer.products
+        products: state.databaseReducer.products,
+        touchStartX: state.uiReducer.touchStartX,
+        touchStartY: state.uiReducer.touchStartY,
+        touchMoveX: state.uiReducer.touchMoveX,
+        touchMoveY: state.uiReducer.touchMoveY,
+        navSliderOpen: state.uiReducer.navSliderOpen        
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
         fetchProducts: (products) => {
-            dispatch(actions.productsLoaded(products))
-        }
+            dispatch(actions.productsLoaded(products));
+        },
+        handleTouchStart: (event) => {
+            dispatch(actions.touchStarted({
+                x: event.touches[0].clientX,
+                y: event.touches[0].clientY
+            }));
+        },
+        handleTouchMove: (event) => {
+            dispatch(actions.touchMoved({
+                x: event.touches[0].clientX,
+                y: event.touches[0].clientY
+            }));
+        },
+        openNavSlider: () => {
+            dispatch(actions.navSliderOpened(true));
+        },
+        closeNavSlider: () => {
+            dispatch(actions.navSliderOpened(false));
+        }                 
     }
 }
 

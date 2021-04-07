@@ -1,1 +1,7 @@
 export const PRODUCTS_LOADED = "PRODUCTS_LOADED";
+
+export const TOUCH_STARTED = "TOUCH_STARTED";
+export const TOUCH_MOVED = "TOUCH_MOVED";
+
+export const NAV_SLIDER_OPENED = "NAV_SLIDER_OPENED";
+//export const NAV_SLIDER_CLOSED = "NAV_SLIDER_CLOSED";

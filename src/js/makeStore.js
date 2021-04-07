@@ -1,9 +1,11 @@
 import { createStore, combineReducers, compose } from 'redux';
-import { databaseReducer } from './databaseReducer.js';
+import { databaseReducer } from './databaseReducer';
+import { uiReducer } from './uiReducer';
 
 export function makeStore(){
     const allReducers = combineReducers({
-        databaseReducer: databaseReducer
+        databaseReducer: databaseReducer,
+        uiReducer: uiReducer
     });
 
     return(
