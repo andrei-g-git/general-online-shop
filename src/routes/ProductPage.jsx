@@ -1,13 +1,18 @@
 import React from 'react';
 import star from '../assets/icons/star-with-five-points.png';
 import {withRouter} from "react-router-dom";
+import '../css/ProductPage.scss';
 
 function ProductPage(props) {
+    let priceId = "price";
+    if(props.product.discount > 0){
+        priceId = "price-strikethrough";
+    }
     return (
-        <div>
-            <h2 id="product-title">
+        <div id="product-page">
+            <h3 id="product-title">
                 {props.product.title}
-            </h2>
+            </h3>
 
             <img id="product-pic"
                 src={props.product.image}
@@ -20,7 +25,7 @@ function ProductPage(props) {
                 <div id="rating-group">
                     <ul id="stars">
                         {
-                            iterateStars().map((element, index) => 
+                            iterateStars(props.product.rating).map((element, index) => 
                                 <img className="star"
                                     src={star}
                                     alt="n/a"
@@ -34,15 +39,36 @@ function ProductPage(props) {
                     </p>
                 </div>
             </div>
+
+            <div id="price-group">
+                <p id={priceId}>
+                    {props.currencyPrefix + props.product.price}
+                </p>
+                
+                {
+                    props.product.discount > 0
+                        ?
+                            <p id="discount">
+                                {props.currencyPrefix 
+                                    + (
+                                        props.product.price 
+                                        - props.product.discount
+                                    )
+                                }
+                            </p>
+                        :
+                            <div></div>                            
+                }
+            </div>
+
+            <p id="product-description">
+                {props.product.description}
+            </p>
         </div>
     )
 }
 
 const iterateStars = (maxStars) => {
-    // const starDummyArray = [];
-    // for(var i = 0; i < maxStars; i++){ //this isn't state
-    //     starDummyArray
-    // }
     return Array.from(Array(maxStars).keys());
 }
 

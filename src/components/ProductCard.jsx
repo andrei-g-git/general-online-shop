@@ -5,10 +5,18 @@ import '../css/ProductCard.scss';
 let $ = require('jquery');
 
 function ProductCard(props) {
+
+    let priceClass = "product-price";
+    let discountClass = "discount-price";
+    if(props.product.discount > 0){
+        priceClass = "product-price-strikethrough";
+        //discountClass = "blah";
+    }
+        
     return (
         <Link className="product-card"
             role="button"
-            to={"/products/" + props.product.id/* formatWithHyphen(props.product.title) */}
+            to={"/products/" + formatWithHyphen(props.product.title)}
             onClick={() => handleCardClick(props)}
         >
             <div className="product-pic-container">
@@ -18,10 +26,25 @@ function ProductCard(props) {
                 />
             </div>
             <div className="info-container">
-                <h3 className="product-title">{props.product.title}</h3>
-                <h4 className="product-price">{props.currencyPrefix + props.product.price}</h4>
+                <h5 className="product-title">{props.product.title}</h5>
+                <div className="price-group">
+                    <h6 className={priceClass}>{props.currencyPrefix + props.product.price}</h6>
+                    {
+                        props.product.discount > 0
+                            ?
+                                <h6 className={discountClass}>
+                                    {props.currencyPrefix 
+                                        + (
+                                            props.product.price 
+                                            - props.product.discount
+                                        )
+                                    }
+                                </h6>
+                            :
+                                <div></div>
+                    }
+                </div>
             </div>
-            
         </Link>
     )
 }

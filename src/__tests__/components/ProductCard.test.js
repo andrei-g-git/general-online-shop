@@ -27,7 +27,7 @@ describe("product card", () => {
             .toBe(true);                       
     });
 
-    it("has hyphens in the url page name", () => {
+    it("has hyphens in the url page name", () => { 
         let wrapper = shallow(<ProductCard product={product} />);
         const link = wrapper.find(Link);
         const path = link.props().to;

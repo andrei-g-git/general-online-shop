@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: $product-card-fr-width $product-card-fr-width;
     //grid-template-rows: 1fr;//$product-card-fr-height;
-    margin: 0rem 1rem;
+    margin: 0rem $app-horizontal-margin;
     gap: 2rem;
     padding: 0;
     padding-top: 1rem + $post-navbar-y-offset + $navbar-padding;

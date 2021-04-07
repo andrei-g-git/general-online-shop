@@ -5,7 +5,7 @@ import Footer from './Footer';
 import * as actions from '../js/actions';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-
+import { formatWithHyphen } from '../js/format';
 //test
 import ProductPage from '../routes/ProductPage';
 
@@ -41,18 +41,19 @@ class Main extends Component {
                         </FeaturedContent>
                     </Route>
 
-                    <Route path="/products/:id"
+                    <Route path="/products/:title"
                         render={routeProps => {
-                            const intParamId = parseInt(routeProps.match.params.id);
+                            const paramTitle = routeProps.match.params.title;
+                          
                             const products = this.props.products;
                             const productsArrayWithOneElement = products   
-                                .filter(product => product.id === intParamId);
+                                .filter(product => formatWithHyphen(product.title) === paramTitle);
                             const product = productsArrayWithOneElement[0];
 
                             return typeof product !== "undefined"
                                 ? (
                                     <ProductPage
-                                        currencyPrefix = {this.props.currencyPrefix}
+                                        currencyPrefix = {this.currency.prefix}
                                         product={product}
                                     />
                                 )
