@@ -33,3 +33,10 @@ export const navSliderOpened = (isOpen) => {
         payload: isOpen
     }
 } 
+
+export const loggedIn = (isLoggedIn) => {
+    return{
+        type: actionTypes.LOGGED_IN,
+        payload: isLoggedIn
+    }
+}
