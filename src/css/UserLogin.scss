@@ -1,4 +1,84 @@
+@import './Variables.scss';
+
 #user-login{
-    margin-left: auto;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > * {
+        margin: 0 0 2rem 0;
+    }
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $post-navbar-y-offset 4rem 0 4rem;
+
+    > * {
+        margin: 2rem 0 0 0;
+    }
+}
+
+input{
+    width: 20rem;
+    height: 2rem;
+    font-size: medium;
+    padding: 0 1rem;
+    border: solid 1px lightgray;
+    border-radius: 0.4rem;
+
+    &::placeholder{
+        color: lightgray;
+    }
+
+    &[type="submit"]{
+        background-color: $primary-color; //GOTTA REUSE
+        font-size: large;
+        font-weight: bolder;
+        color: white;
+        width: 22rem; //dude I dunno...
+        height: 3rem;
+        border-style: none;
+    }
+}
+
+.gray-text{
+    margin: 0;
+    color: rgb(155, 155, 155);
+    font-weight: 400;
+}
+
+#or-signin-with, #or-signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media-signin{
+    background-color: $primary-color; //GOTTA REUSE
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+    width: 22rem; //dude I dunno...
+    height: 3rem;
+    border-style: none;
+}
+
+#login-facebook{
+    background-color: rgb(57, 36, 134);
+}
+#login-google{
+    background-color: rgb(155, 16, 86);
+}
+#login-twitter{
+    background-color: rgb(36, 103, 230);
+}
+
+#sign-up{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 0;
 }
