@@ -1,4 +1,17 @@
-.left-navbar-item{
-    margin-left: auto;
+.left-navbar-item{ //it's actually right navbar items but whatever
+
+    height: 80%;
+    // margin: 10%;
+    // padding: 10%;
+}
+
+.nav-link-icon{
     height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#user-login-link /* > * */{
+    // margin: 0;
+    // padding: 0;
 }

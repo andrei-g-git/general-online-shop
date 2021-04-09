@@ -8,6 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 import { formatWithHyphen } from '../js/format';
 import ProductPage from '../routes/ProductPage';
 import UserLogin from '../routes/UserLogin';
+import '../css/Main.scss';
 
 let $ = require('jquery');
 class Main extends Component {

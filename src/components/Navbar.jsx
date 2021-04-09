@@ -18,9 +18,11 @@ function Navbar(props) {
             <nav id="nav-bar">
                 <HamburgerMenu></HamburgerMenu> 
                 <SiteLogo></SiteLogo>
-                <Search></Search>
-                <Cart></Cart>
-                <UserLoginIcon></UserLoginIcon>
+                <nav id="right-hand-icons">
+                    <Search></Search>
+                    <Cart></Cart>
+                    <UserLoginIcon></UserLoginIcon>
+                </nav>
             </nav>
 
             <div id={sliderContainerId}> 

@@ -35,29 +35,6 @@ function FeaturedContent(props) {
 
             <Footer></Footer>
             
-{/*             <Switch>
-                <Route path="/products/:id"
-                    render={routeProps => {
-                        const intParamId = parseInt(routeProps.match.params.id);
-                        const products = props.products;
-                        const productsArrayWithOneElement = products   
-                            .filter(product => product.id === intParamId);
-                        const product = productsArrayWithOneElement[0];
-
-                        return typeof product !== "undefined"
-                            ? (
-                                <ProductPage
-                                    currencyPrefix = {props.currencyPrefix}
-                                    product={product}
-                                />
-                            )
-                            :
-                            <div></div>
-                    }}
-                >
-
-                </Route>
-            </Switch> */}
         </div>
     )
 }
