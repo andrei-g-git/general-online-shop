@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 import { Switch, Route } from 'react-router-dom';
 import ProductPage from '../routes/ProductPage';
 import '../css/FeaturedContent.scss';
-
+import Footer from './Footer';
 //test
 import RouterDebugger from './RouterDebugger';
 
@@ -32,6 +32,8 @@ function FeaturedContent(props) {
                     
                 } 
             </ul>
+
+            <Footer></Footer>
             
 {/*             <Switch>
                 <Route path="/products/:id"
