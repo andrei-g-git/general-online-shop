@@ -34,9 +34,19 @@ export const navSliderOpened = (isOpen) => {
     }
 } 
 
-export const loggedIn = (isLoggedIn) => {
+export const loggedIn = (id, isLoggedIn) => {
     return{
         type: actionTypes.LOGGED_IN,
-        payload: isLoggedIn
+        payload: {
+            isLoggedIn: isLoggedIn,
+            id: id
+        }
+    }
+}
+
+export const cartLoaded = (cartArray) => {
+    return{
+        type: actionTypes.CART_LOADED,
+        payload: cartArray
     }
 }

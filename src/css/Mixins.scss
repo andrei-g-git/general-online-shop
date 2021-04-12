@@ -1,0 +1,29 @@
+@import './Variables.scss';
+
+@mixin standardCenteredButton(
+    $width: 22rem, 
+    $height: 3rem, 
+    $fontSize: large, 
+    $fontWeight: bolder, 
+    $padding: 0 1rem, 
+    $backgroundColor: $CTA-color,
+    $borderStyle: none, 
+    $borderWidth: 0, 
+    $borderRadius: 0.4rem
+    ){
+        width: $width;
+        height: $height;
+        font-size: $fontSize;
+        font-weight: $fontWeight;
+        padding: $padding; 
+        background-color: $backgroundColor;
+        border: $borderStyle $borderWidth $backgroundColor;
+        border-radius: $borderRadius;
+        color: white;
+}
+
+@mixin centerColumnItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

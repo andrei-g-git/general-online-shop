@@ -1,11 +1,24 @@
 @import 'Variables.scss';
 
+@mixin navSliderCommon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; 
+    top: 4rem;
+    left: -45vw; 
+    width: 33vw;
+    height: 100vh;
+    background-color: $complementary-color;
+    z-index: $standard-overlay-z-index;
+    margin: 0;
+}
+
 #nav-bar{
     display: flex;
     align-items: center;
-    //justify-content: flex-end;
     background-color: $primary-color;
-    width: 100%;//100vw;
+    width: 100%;
     height: $post-navbar-y-offset;
     position: fixed;
     z-index: $standard-overlay-z-index;
@@ -24,48 +37,30 @@
 }
 
 #nav-slider{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed; 
-    top: 4rem;
-    left: -45vw; 
-    width: 33vw;
-    height: 100%;
-    background-color: $complementary-color;
-    z-index: $standard-overlay-z-index;
-    //display: none; //for now
+    @include navSliderCommon();
 
     transform: translateX(0%);
-    transition: transform 0.1s ease-in;
+    transition: transform 0.2s ease-in;
 }
 #nav-slider-active{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed; 
-    top: 4rem;
-    left: -45vw;
-    width: 33vw;
-    height: 100%;
-    background-color: $complementary-color;
-    z-index: $standard-overlay-z-index;
+    @include navSliderCommon();
 
     transform: translateX(100%);
-    transition: transform 0.1s ease-out;
+    transition: transform 0.2s ease-out;
 }
 
 #slider-container{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 400px;//100vw;
-    height: 800px;//100vh;
-    background-color: rgba(0, 0, 0, 0.35);
-    z-index: $standard-overlay-z-index - 1;
     display: none;
 }
 
 #slider-container-translucent{
     display: block;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: $standard-overlay-z-index - 1;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import FeaturedContent from './FeaturedContent';
 import Footer from './Footer';
+import Cart from '../routes/Cart';
 import * as actions from '../js/actions';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -71,6 +72,11 @@ class Main extends Component {
                         </UserLogin>
                     </Route>
 
+                    <Route path="/cart">
+                        <Cart products={this.props.products}>
+
+                        </Cart>
+                    </Route>
                 </Switch>
 
             </div>
@@ -86,17 +92,6 @@ class Main extends Component {
         })
     }
 
-    // handleClickDelete = () => {
-    //     $.ajax({
-    //         url: "/api/products/3",
-    //         type: "GET",
-    //         success: (response) => {
-    //             this.setState({testProduct: response});
-    //             console.log(response.description) //async, so it doesn't get anything yet?
-    //         },
-    //         dataType: "json"
-    //     })        
-    // }
     handleTouchEnd = () => {
         const startX = this.props.touchStartX;
         const moveX = this.props.touchMoveX;

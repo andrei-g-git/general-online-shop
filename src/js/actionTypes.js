@@ -7,3 +7,6 @@ export const NAV_SLIDER_OPENED = "NAV_SLIDER_OPENED";
 //export const NAV_SLIDER_CLOSED = "NAV_SLIDER_CLOSED";
 
 export const LOGGED_IN = "LOGGED_IN";
+
+export const CART_LOADED = "CART_LOADED";
+ 

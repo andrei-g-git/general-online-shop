@@ -1,9 +1,29 @@
 @import './Variables.scss';
+@import './Mixins.scss';
+
+// @mixin centerColumnItems {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+@mixin socialMediaSubmitCommon($backgroundColor) {
+    background-color: $backgroundColor; 
+    color: white;
+}
+
+@mixin loginInputCommon($width, $height, $fontSize, $fontWeight, $padding, $borderStyle, $borderWidth, $borderColor, $borderRadius) {
+    width: $width;
+    height: $height;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    padding: $padding; 
+    border: $borderStyle $borderWidth $borderColor;
+    border-radius: $borderRadius;
+}
 
 #user-login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include centerColumnItems();
 
     > * {
         margin: 0 0 2rem 0;
@@ -11,37 +31,24 @@
 }
 
 #login-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: $post-navbar-y-offset 4rem 0 4rem;
+    @include centerColumnItems();
+    margin-top: $post-navbar-y-offset;
 
     > * {
         margin: 2rem 0 0 0;
     }
 }
 
-input{
-    width: 20rem;
-    height: 2rem;
-    font-size: medium;
-    padding: 0 1rem;
-    border: solid 1px lightgray;
-    border-radius: 0.4rem;
-
+#email-field, #password-field{
+    @include loginInputCommon(20rem, 2rem, medium, normal, 0 1rem, solid, 1px, $faded-text-color, 0.4rem);
     &::placeholder{
-        color: lightgray;
+        color: $faded-text-color;
     }
+}
 
-    &[type="submit"]{
-        background-color: $primary-color; //GOTTA REUSE
-        font-size: large;
-        font-weight: bolder;
-        color: white;
-        width: 22rem; //dude I dunno...
-        height: 3rem;
-        border-style: none;
-    }
+#submit-credentials{
+    @include loginInputCommon(22rem, 3rem, large, bolder, 0 1rem, none, 666px, #666, 0.4rem);
+    @include socialMediaSubmitCommon($primary-color);
 }
 
 .gray-text{
@@ -51,29 +58,20 @@ input{
 }
 
 #or-signin-with, #or-signup{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.social-media-signin{
-    background-color: $primary-color; //GOTTA REUSE
-    font-size: large;
-    font-weight: bolder;
-    color: white;
-    width: 22rem; //dude I dunno...
-    height: 3rem;
-    border-style: none;
+    @include centerColumnItems();
 }
 
 #login-facebook{
-    background-color: rgb(57, 36, 134);
+    @include loginInputCommon(22rem, 3rem, large, bolder, 0 1rem, none, 666px, #666, 0.4rem);
+    @include socialMediaSubmitCommon(rgb(57, 36, 134));
 }
 #login-google{
-    background-color: rgb(155, 16, 86);
+    @include loginInputCommon(22rem, 3rem, large, bolder, 0 1rem, none, 666px, #666, 0.4rem);
+    @include socialMediaSubmitCommon(rgb(155, 16, 86));
 }
 #login-twitter{
-    background-color: rgb(36, 103, 230);
+    @include loginInputCommon(22rem, 3rem, large, bolder, 0 1rem, none, 666px, #666, 0.4rem);
+    @include socialMediaSubmitCommon(rgb(36, 103, 230));
 }
 
 #sign-up{

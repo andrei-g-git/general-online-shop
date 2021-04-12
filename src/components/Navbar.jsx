@@ -2,16 +2,18 @@ import React from 'react';
 import HamburgerMenu from '../routes/HamburgerMenu';
 import SiteLogo from '../routes/SiteLogo';
 import Search from '../routes/Search';
-import Cart from '../routes/Cart';
+import CartIcon from '../routes/CartIcon';
 import UserLoginIcon from '../routes/UserLoginIcon';
 import '../css/Navbar.scss';
 
 function Navbar(props) {
     let navSliderId = "nav-slider";
     let sliderContainerId = "slider-container";
-    if(props.navSliderOpen)
+    if(props.navSliderOpen){
         navSliderId = "nav-slider-active"
         sliderContainerId = "slider-container-translucent"
+    }
+    
     return (
         
         <div>
@@ -20,7 +22,7 @@ function Navbar(props) {
                 <SiteLogo></SiteLogo>
                 <nav id="right-hand-icons">
                     <Search></Search>
-                    <Cart></Cart>
+                    <CartIcon></CartIcon>
                     <UserLoginIcon></UserLoginIcon>
                 </nav>
             </nav>

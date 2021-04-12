@@ -24,7 +24,7 @@ function UserLogin(props) {
                         type="password"
                         placeholder="Password:"
                     />
-                    <input
+                    <input id="submit-credentials"
                         type="submit"
                         value="Log in"
                     />
@@ -76,24 +76,26 @@ function curryHandleSubmit(props){
 }
 
 const handleLogIn = (props, response) => {
-    if(response === true){
-        props.logInUser(true);
+    if(response.loggedIn === true){
+        props.logInUser(response.id, true);
         props.history.push("/"); //needs {withRouter}
     } else {
         console.log("incorrect or missing credentials")
+        console.log(response)
     }
 }
 
 const mapStateToProps = (state) => {
     return{
-        loggedIn: state.customerReducer.loggedIn
+        loggedIn: state.customerReducer.loggedIn,
+        userId: state.customerReducer.userId
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        logInUser: (isLoggedIn) => {
-            dispatch(actions.loggedIn(isLoggedIn));
+        logInUser: (id, isLoggedIn) => {
+            dispatch(actions.loggedIn(id, isLoggedIn));
         }
     }
 }

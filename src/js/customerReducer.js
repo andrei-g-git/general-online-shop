@@ -1,7 +1,8 @@
 import * as actionTypes from './actionTypes';
 
 const initialState = {
-    loggedIn: false
+    loggedIn: false,
+    userId: -1 
 }
 
 const customerReducer = (state = initialState, action) => {
@@ -9,7 +10,8 @@ const customerReducer = (state = initialState, action) => {
         case actionTypes.LOGGED_IN:
             return{
                 ...state,
-                loggedIn: action.payload
+                loggedIn: action.payload.loggedIn,
+                userId: action.payload.id
             }
         default:
             return state;

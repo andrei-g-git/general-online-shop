@@ -1,4 +1,5 @@
 @import 'Variables.scss';
+@import 'Mixins.scss';
 
 #product-page{
     display: grid;
@@ -9,6 +10,7 @@
         "title title title title title"
         " pic pic pic pic pic "
         "rating . . . price"
+        " . btn btn btn ."
         " desc desc desc desc desc ";
 
     margin: 0 $app-horizontal-margin;
@@ -77,4 +79,19 @@
 
 #product-description{
     grid-area: desc;
+}
+
+#add-to-cart-wrapper{
+    grid-area: btn;
+    margin: 2rem 0;
+    @include centerColumnItems();
+}
+
+#add-to-cart{
+    @include standardCenteredButton();
+
+    &> a{
+        text-decoration: none;
+        color: white;
+    }
 }

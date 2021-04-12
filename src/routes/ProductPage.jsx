@@ -66,6 +66,14 @@ function ProductPage(props) {
                 <p id="product-description">
                     {props.product.description}
                 </p>
+
+                <div id="add-to-cart-wrapper">
+                    <button id="add-to-cart"
+                        onClick={() => handleClick(props.product)}
+                    >
+                        <a href="/cart">Add to cart</a>
+                    </button>
+                </div>
             </div>
 
             
@@ -73,6 +81,10 @@ function ProductPage(props) {
 
         </div>                    
     )
+}
+
+const handleClick = (product) => {
+
 }
 
 const iterateStars = (maxStars) => {
