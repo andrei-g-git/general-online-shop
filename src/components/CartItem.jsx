@@ -10,14 +10,16 @@ function CartItem(props) {
                 <div className="quantity-modifier"></div>
                 <div className="subtotal-group">
                     <label>Price:</label>
-                    <p>{props.price}</p>
+                    <p>{props.currencyPrefix}{props.price}</p>
                     <label>Discount:</label>
-                    <p>{props.discount}</p>
+                    <p>{props.currencyPrefix}{props.discount}</p>
                     <label>Shipping:</label>
-                    <p>{props.currencyPrefix} + 8.50</p>
+                    <p>{props.currencyPrefix}8.50</p>
                     <label>Subtotal:</label>
-                    <p>{props.price - props.discount + 8.50}</p>
+                    <p>{props.currencyPrefix}{props.price - props.discount + 8.50}</p>
                 </div>
+
+                {/* <div>{props.addToCartId}</div> */}
             </div>
             :
             <div></div>
