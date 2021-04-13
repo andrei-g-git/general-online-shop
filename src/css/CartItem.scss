@@ -1,0 +1,32 @@
+@import 'Variables.scss';
+@import 'Mixins.scss';
+
+.cart-item{
+    @include commonGridTemplateWithoutArea();
+    grid-template-areas: 
+        "title title title title title"
+        " pic pic pic pic pic "
+        "quant . . . price";
+
+    &> h1{
+        text-align: center;
+        grid-area: title;
+    }
+
+    &> img{ //these kind of repeat
+        width: 80%;
+        grid-area: pic;
+        justify-self: center;
+        padding: 5% 0;
+    }
+
+    .subtotal-group{
+        grid-area: price;
+
+        &> * {
+            padding: 0;
+            margin: 0;        
+        }
+
+    }
+}

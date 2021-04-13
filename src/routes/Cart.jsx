@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { withRouter } from "react-router-dom";
 import { useStore, connect } from 'react-redux';
 import * as actions from '../js/actions';
+import CartItem from '../components/CartItem';
 
 let $ = require('jquery');
 
@@ -22,7 +23,7 @@ function Cart(props) {
             success: response => {
                 console.log(response);
 
-                props.loadCart(response); // NOT ENOUGH I also need to get the products (the ones I get in Main may ne out of date), then the actual cart is filtered by product id from the product collection
+                props.loadCart(response); 
             }
         });
     },
@@ -34,21 +35,31 @@ function Cart(props) {
             <br/>
             <br/>
             <br/>
-
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
             aegresrgsergsreg
+            <br/>
+            <br/>
+            <br/>
+
+
 
             {
                 props.cart.length
                     ?
                         props.cart.map((item, index) => 
-                            <p key={index}>{item.productId}</p>    
+                            // <div key={index}>
+                            //     <img src={item.image} alt="n/a"></img>
+                            //     <p>{item.title}</p>
+                                
+                            // </div>
+                            <CartItem
+                                title={item.title}
+                                image={item.image}
+                                price={item.price}
+                                discount={item.discount}
+                                currencyPrefix="€"
+                                quantity={item.quantity}
+                            />
+                                
                         )
                     :
                             <div></div>
