@@ -1,5 +1,7 @@
 import React from 'react';
 import '../css/CartItem.scss';
+import minusIcon from '../assets/icons/minus_white.png';
+import plusIcon from '../assets/icons/plus_white.png';
 
 function CartItem(props) {
     return ( //still needs euro suffix for most quantities
@@ -7,7 +9,21 @@ function CartItem(props) {
             <div className="cart-item"> 
                 <h1>{props.title}</h1>
                 <img src={props.image} alt="n/a"/>
-                <div className="quantity-modifier"></div>
+                <div className="quantity-modifier">
+                    <img className="change-quantity"
+                        src={minusIcon}
+                        alt="n/a"
+                        onClick={() => props.notifyQuantity(-1, props.addToCartId)}
+                    ></img>
+
+                    <div className="quantity-output">{props.quantity}</div>
+
+                    <img className="change-quantity"
+                        src={plusIcon}
+                        alt="n/a"
+                        onClick={() => props.notifyQuantity(+1, props.addToCartId)}
+                    ></img>
+                </div>
                 <div className="subtotal-group">
                     <label>Price:</label>
                     <p>{props.currencyPrefix}{props.price}</p>
@@ -19,7 +35,7 @@ function CartItem(props) {
                     <p>{props.currencyPrefix}{props.price - props.discount + 8.50}</p>
                 </div>
 
-                {/* <div>{props.addToCartId}</div> */}
+
             </div>
             :
             <div></div>
