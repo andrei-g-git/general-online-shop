@@ -1,9 +1,9 @@
 import React from 'react';
-import HamburgerMenu from '../routes/HamburgerMenu';
-import SiteLogo from '../routes/SiteLogo';
-import Search from '../routes/Search';
-import CartIcon from '../routes/CartIcon';
-import UserLoginIcon from '../routes/UserLoginIcon';
+import HamburgerMenu from './HamburgerMenu';
+import SiteLogo from './SiteLogo';
+import Search from './Search';
+import CartIcon from './CartIcon';
+import UserLoginIcon from './UserLoginIcon';
 import '../css/Navbar.scss';
 
 function Navbar(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
-import FeaturedContent from './FeaturedContent';
+import FeaturedContent from '../routes/FeaturedContent';
 import Footer from './Footer';
 import Cart from '../routes/Cart';
 import * as actions from '../js/actions';
