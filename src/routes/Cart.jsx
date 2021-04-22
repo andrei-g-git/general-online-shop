@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { withRouter } from "react-router-dom";
-import { useStore, connect } from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from '../js/actions';
 import CartItem from '../components/CartItem';
+import Footer from '../components/Footer';
 
 let $ = require('jquery');
 class Cart extends React.Component{
-    // constructor(){
-    //     super();
 
-    //     this.state = { //no side effects, just using as a hacky way to force render because the redux props can't be arsed to do that
-    //         count: 0
-    //     }
-    // }
     componentDidMount(){
         $.ajax({
             type: "POST",
@@ -21,18 +16,10 @@ class Cart extends React.Component{
             success: response => {
                 console.log(response);
 
-                this.props.loadCart(response); //I don't think this runs
-
-                //this.forceUpdateState();
+                this.props.loadCart(response); 
             }
         });
     }
-
-    // componentDidUpdate(prevProps, prevState){
-    //     if (prevState !== this.state) {
-    //     this.forceUpdate(); //because it doesn't seem to update the actual state on redux state change
-    //     }
-    // }
 
     render(){
         return (
@@ -57,13 +44,15 @@ class Cart extends React.Component{
                         :
                                 <div></div>
                 }
+
+                <Footer></Footer>
             </div>
         )
     }
 
     updateCartItemQuantity = (quantity, addToCartId) => {
 
-        const userId = this.props.userId;//2; //no idea how to access the store from here
+        const userId = this.props.userId;
         const data = {
             quantity: quantity,
             addToCartId: addToCartId,
@@ -77,21 +66,9 @@ class Cart extends React.Component{
                 console.log(response);
 
                 this.props.loadCart(response); 
-
-                //this.forceUpdateState();
             }
         });
     }
-
-    // forceUpdateState = () =>{
-    //     const count = this.state.count;
-    //     let newCount = count + 1;
-    //     if(count >= 999) newCount = 0;
-    //     this.setState({
-    //         count: newCount
-    //     })
-    // }
-
 }
 
 const mapStateToProps = (state) =>{

@@ -59,6 +59,7 @@ class Main extends Component {
                                     <ProductPage
                                         currencyPrefix = {this.currency.prefix}
                                         product={product}
+                                        userId={this.props.userId}
                                     />
                                 )
                                 :
@@ -83,7 +84,7 @@ class Main extends Component {
         )
     }
 
-    componentDidMount(){
+    componentDidMount(){ //this should probably be in the featuredcontent route?
         $.ajax({
             url: "/api/products",
             type: "GET",
@@ -116,7 +117,9 @@ const mapStateToProps = (state) => {
         touchStartY: state.uiReducer.touchStartY,
         touchMoveX: state.uiReducer.touchMoveX,
         touchMoveY: state.uiReducer.touchMoveY,
-        navSliderOpen: state.uiReducer.navSliderOpen        
+        navSliderOpen: state.uiReducer.navSliderOpen     ,
+        userId: state.customerReducer.userId   //I have to be careful with this, must ensure it's up-to-date at 
+                            //all times (it's needed because purchases should be optionally made without an account)
     }
 }
 

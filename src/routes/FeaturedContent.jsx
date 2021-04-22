@@ -50,22 +50,22 @@ const cardWasClicked = (id) => {
 
 }
 
-const test = (routeProps, props) => {
-    const intParamId = parseInt(routeProps.match.params.id);
-    const products = props.products;
-    const productsArrayWithOneElement = products   
-        .filter(product => product.id === intParamId);
-    const product = productsArrayWithOneElement[0];
+// const test = (routeProps, props) => {
+//     const intParamId = parseInt(routeProps.match.params.id);
+//     const products = props.products;
+//     const productsArrayWithOneElement = products   
+//         .filter(product => product.id === intParamId);
+//     const product = productsArrayWithOneElement[0];
 
-    return typeof product !== "undefined"
-        ? (
-            <ProductPage
-                currencyPrefix = {props.currencyPrefix}
-                product={product}
-            />
-        )
-        :
-        <div></div>
-}
+//     return typeof product !== "undefined"
+//         ? (
+//             <ProductPage
+//                 currencyPrefix = {props.currencyPrefix}
+//                 product={product}
+//             />
+//         )
+//         :
+//         <div></div>
+// }
 
 export default FeaturedContent;

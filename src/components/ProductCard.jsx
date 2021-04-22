@@ -37,7 +37,7 @@ function ProductCard(props) {
                                         + (
                                             props.product.price 
                                             - props.product.discount
-                                        )
+                                        ).toFixed(2) //getting a weird .99999999995 decimal row without toFixed
                                     }
                                 </h6>
                             :

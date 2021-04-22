@@ -5,6 +5,7 @@ const initialState = {
     userId: -1 
 }
 
+//ON LOGOUT USER ID MUST RETURN TO -1
 const customerReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.LOGGED_IN:
