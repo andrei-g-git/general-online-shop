@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
-import { Switch, Route } from 'react-router-dom';
-import ProductPage from './ProductPage';
 import '../css/FeaturedContent.scss';
 import Footer from '../components/Footer';
 //test
@@ -23,7 +21,7 @@ function FeaturedContent(props) {
                                     key={product.id}
                                     currencyPrefix = {props.currencyPrefix}
                                     product={product}
-                                    notify={() => {cardWasClicked(product.id); setState({})}}
+                                    notify={() => {cardWasClicked(product.id); setState({})}} //forgot why I'm setting the state...
                                 >
                                 </ProductCard>   
                             )
@@ -49,23 +47,5 @@ const cardWasClicked = (id) => {
     });
 
 }
-
-// const test = (routeProps, props) => {
-//     const intParamId = parseInt(routeProps.match.params.id);
-//     const products = props.products;
-//     const productsArrayWithOneElement = products   
-//         .filter(product => product.id === intParamId);
-//     const product = productsArrayWithOneElement[0];
-
-//     return typeof product !== "undefined"
-//         ? (
-//             <ProductPage
-//                 currencyPrefix = {props.currencyPrefix}
-//                 product={product}
-//             />
-//         )
-//         :
-//         <div></div>
-// }
 
 export default FeaturedContent;

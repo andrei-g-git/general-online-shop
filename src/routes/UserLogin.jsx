@@ -78,7 +78,7 @@ function curryHandleSubmit(props){
 const handleLogIn = (props, response) => {
     if(response.loggedIn === true){
         props.logInUser(response.id, true);
-        props.history.push("/"); //needs {withRouter}
+        props.history.push("/"); 
     } else {
         console.log("incorrect or missing credentials")
         console.log(response)

@@ -2,7 +2,8 @@ import * as actionTypes from './actionTypes';
 
 const initialState = {
     products: [], 
-    cart: []
+    cart: [],
+    searchedProducts: []
 }
 
 export const databaseReducer = ( state = initialState, action) => {
@@ -16,6 +17,11 @@ export const databaseReducer = ( state = initialState, action) => {
             return{
                 ...state,
                 cart: action.payload
+            }
+        case actionTypes.SEARCHED_PRODUCTS_LOADED:
+            return{
+                ...state,
+                searchedProducts: action.payload
             }
         default:
             return state;

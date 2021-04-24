@@ -9,6 +9,7 @@ import { Switch, Route } from 'react-router-dom';
 import { formatWithHyphen } from '../js/format';
 import ProductPage from '../routes/ProductPage';
 import UserLogin from '../routes/UserLogin';
+import SearchPage from '../routes/SearchPage';
 import '../css/Main.scss';
 
 let $ = require('jquery');
@@ -67,6 +68,10 @@ class Main extends Component {
                         }}
                     />
 
+                    <Route path="/search">
+                        <SearchPage />
+                    </Route>
+
                     <Route path="/login">
                         <UserLogin awefeawf={345}>
 
@@ -77,6 +82,15 @@ class Main extends Component {
                         <Cart products={this.props.products}>
 
                         </Cart>
+                    </Route>
+
+                    {/* THIS ISN"T ROUTING although the link changes --- TEST THE MATCHERS */}
+                    <Route path="/search/result"> {/* //the result string should be dynamic : the search query formatted with hyphens */}
+                        <FeaturedContent
+                                products={this.props.searchedProducts}
+                                currencyPrefix={this.currency.prefix} 
+                        >
+                        </FeaturedContent>
                     </Route>
                 </Switch>
 
@@ -90,7 +104,19 @@ class Main extends Component {
             type: "GET",
             success: (response) => this.props.fetchProducts(response),
             dataType: "json"
-        })
+        });
+
+
+
+        //test
+        // $.ajax({
+        //     url: "/api/products/search",
+        //     type: "POST",
+        //     data: {
+        //         title: "mens"
+        //     },
+        //     success: response => console.log(response)
+        // })
     }
 
     handleTouchEnd = () => {
@@ -118,8 +144,9 @@ const mapStateToProps = (state) => {
         touchMoveX: state.uiReducer.touchMoveX,
         touchMoveY: state.uiReducer.touchMoveY,
         navSliderOpen: state.uiReducer.navSliderOpen     ,
-        userId: state.customerReducer.userId   //I have to be careful with this, must ensure it's up-to-date at 
+        userId: state.customerReducer.userId,   //I have to be careful with this, must ensure it's up-to-date at 
                             //all times (it's needed because purchases should be optionally made without an account)
+        searchedProducts: state.databaseReducer.searchedProducts
     }
 }
 

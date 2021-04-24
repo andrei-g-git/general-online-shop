@@ -10,4 +10,6 @@ export const LOGGED_IN = "LOGGED_IN";
 
 export const CART_LOADED = "CART_LOADED";
 
+export const SEARCHED_PRODUCTS_LOADED = "SEARCHED_PRODUCTS_LOADED";
+
  

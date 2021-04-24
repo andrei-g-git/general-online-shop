@@ -1,16 +1,21 @@
 import React from 'react';
-//import '../css/Search.scss';
-import '../css/LeftNavbarItems.scss';
+import { Link } from 'react-router-dom';
+import '../css/LeftNavbarItems.scss'; //actually on the right
 
 import searchIcon from "../assets/icons/search-icon-png-9973.png";
 
 function Search() {
     return (
-        <img id="search" 
+        <Link  id="navbar-search" 
             className="left-navbar-item"
-            src={searchIcon}
-            alt="n/a"
-        />
+            role="button"
+            to="/search"            
+        >
+            <img className="nav-link-icon"
+                src={searchIcon}
+                alt="n/a"
+            />
+        </Link>
     )
 }
 

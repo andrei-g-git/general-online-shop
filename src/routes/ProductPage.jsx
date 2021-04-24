@@ -87,16 +87,6 @@ function ProductPage(props) {
 }
 
 const handleClick = (product, userId) => { //must ensure -1 if not logged in
-    /* 
-        need to get the cart id by making a post request (passing the user id) similar to the one in the cart route
-        to post the item added to the cart, I only need that cart id and the product id which I already have here
-            each add-to-cart request is it's own record so I don't need to pass an id for that, the server should generate 1 dynamically, 
-                probably one higher by 1 than the highest existing addToCartId 
-        pressing the button multiple times should increase the quantity FOR THE SAME addToCartId IF it's the same product in the same cart
-            the server should thus loop all addToCart keys (i guess mysql is declarative so I probably don't need to loop 
-                or filter explicitly, no idea how yet), checking if the productId && cartId aren't both present in any record, otherwise 
-                    it has to update that record, not make a new one
-    */
 
     if(userId >= 0){ //I don't like tight coupling, I'm not sending '-1' to the server, what kind of shit is that
         $.ajax({

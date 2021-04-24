@@ -50,3 +50,10 @@ export const cartLoaded = (cartArray) => {
         payload: cartArray
     }
 }
+
+export const searchedProductsLoaded = (products) => {
+    return{
+        type: actionTypes.SEARCHED_PRODUCTS_LOADED,
+        payload: products
+    }
+}
