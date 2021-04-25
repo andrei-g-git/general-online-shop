@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import '../css/FeaturedContent.scss';
-import Footer from '../components/Footer';
+/* import Footer from '../components/Footer'; */
 //test
 import RouterDebugger from '../components/RouterDebugger';
 
@@ -31,7 +31,7 @@ function FeaturedContent(props) {
                 } 
             </ul>
 
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
             
         </div>
     )
