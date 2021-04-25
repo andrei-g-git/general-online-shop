@@ -1,4 +1,7 @@
 #main{
-    //width: auto;
-    position: relative;
+    // position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
 }
