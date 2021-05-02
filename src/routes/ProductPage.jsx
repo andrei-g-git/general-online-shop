@@ -1,7 +1,7 @@
 import React from 'react';
 import star from '../assets/icons/star-with-five-points.png';
 import {withRouter} from "react-router-dom";
-import Footer from '../components/Footer';
+/* import Footer from '../components/Footer'; */
 import '../css/ProductPage.scss';
 
 let $  = require('jquery');
@@ -80,7 +80,7 @@ function ProductPage(props) {
             </div>
 
             
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
 
         </div>                    
     )
