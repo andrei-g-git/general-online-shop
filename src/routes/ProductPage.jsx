@@ -4,6 +4,9 @@ import {withRouter} from "react-router-dom";
 import Footer from '../components/Footer';
 import '../css/ProductPage.scss';
 
+import {Row, Col, Container, Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 let $  = require('jquery');
 
 function ProductPage(props) {
@@ -12,17 +15,31 @@ function ProductPage(props) {
         priceId = "price-strikethrough";
     }
     return (
-        <div>
-            <div id="product-page">
-                <h3 id="product-title">
+        <Container className="container"
+            id="product-page"
+        >
+            {/* <div id="product-page"> */}
+            <Row className="row">
+                <h3 id="product-title"
+                    className="col-12"
+                >
                     {props.product.title}
-                </h3>
+                </h3>   
+            </Row>
 
+            <Row className="row">
                 <img id="product-pic"
+                    className="col-12"
                     src={props.product.image}
                     alt="n/a"
                 />
-                <div id="rating-container">
+            </Row>
+
+            <Row>
+                <Col 
+                    className="col-6"
+                    id="rating-container"
+                >
                     <label id="rating-label">
                         User Rating:
                     </label>
@@ -42,9 +59,11 @@ function ProductPage(props) {
                             {props.product.rating + "/5"}
                         </p>
                     </div>
-                </div>
+                </Col>
 
-                <div id="price-group">
+                <Col id="price-group"
+                    className="col-6"
+                >
                     <p id={priceId}>
                         {props.currencyPrefix + props.product.price}
                     </p>
@@ -63,26 +82,33 @@ function ProductPage(props) {
                             :
                                 <div></div>                            
                     }
-                </div>
+                </Col>
+            </Row>
 
-                <p id="product-description">
+            <Row>
+                <p  className="col-12"
+                    id="product-description">
                     {props.product.description}
                 </p>
+            </Row>
 
-                <div id="add-to-cart-wrapper">
-                    <button id="add-to-cart"
-                        onClick={() => handleClick(props.product, props.userId)} //must ensure -1 if not logged in
-                    >
-                        {/* <a href="/cart">Add to cart</a> */} {/* I don't need it to do redirect yet... */}
-                        Add to cart
-                    </button>
-                </div>
-            </div>
+            <Row id="add-to-cart-wrapper">
+                <Button className="col-8"
+                    id="add-to-cart"
+                    onClick={() => handleClick(props.product, props.userId)} //must ensure -1 if not logged in
+                >
+                    {/* <a href="/cart">Add to cart</a> */} {/* I don't need it to do redirect yet... */}
+                    Add to cart
+                </Button>
+            </Row>                
+
+
+            {/* </div> */}
 
             
             <Footer></Footer>
 
-        </div>                    
+        </Container>                    
     )
 }
 
