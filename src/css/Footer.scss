@@ -1,21 +1,21 @@
 #footer{
     // position:absolute;
     // bottom: 0;
-    //width: 96%; //I'm just eyeballing this, if it's 100% the body becomes wider than the view port
+    // width: 96%; //I'm just eyeballing this, if it's 100% the body becomes wider than the view port
+
+    justify-self: end;
 
 
-
-    // justify-self: end;
-    // display: grid;
-    // grid-auto-flow: column;
-    // grid-template-columns: auto auto auto;
-    // grid-template-rows: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1rem;
 
     background-color: gray;
 
-    // padding: 0.5rem;
+    padding: 0.5rem;
 
-    // margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .footer-link{

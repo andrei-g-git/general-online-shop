@@ -1,31 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Footer.scss';
-import { Container, Row, Col} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Footer() {
     return (
+        <footer id="footer">
+            <Link className="footer-link col-1" to="/careers">Careers</Link>
+            <Link className="footer-link col-1" to="/blog">Blog</Link>
+            <Link className="footer-link col-1" to="/about">About eShop</Link>
+            <Link className="footer-link col-2" to="/sell-products">Sell products on eShop</Link>
+            <Link className="footer-link col-2" to="/sell-on-eShop-business">Sell on eShop business</Link>
+            <Link className="footer-link col-3" to="/business-card">eShop Business Card</Link>    
+            <Link className="footer-link col-3" to="/shop-with-points">Shop with Points</Link>
+            <Link className="footer-link col-3" to="/balance">Reload Your Balance</Link>    
 
-        <Container id="footer"> {/* was footer/> */}
-            <Row>
-                <Link className="footer-link col-4" to="/careers">Careers</Link> {/* had class */}
-                <Link className="footer-link col-4" to="/sell-products">Sell products on eShop</Link>
-                <Link className="footer-link col-4" to="/business-card">eShop Business Card</Link>   
-            </Row>
-
-            <Row className="justify-content-between">
-                <Link className="footer-link col-4" to="/blog">Blog</Link>                
-                <Link className="footer-link col-4" to="/sell-on-eShop-business">Sell on eShop business</Link>
-                <Link className="footer-link col-4" to="/shop-with-points">Shop with Points</Link>
-            </Row>
-
-            <Row className="justify-content-between">
-                <Link className="footer-link col-4" to="/about">About eShop</Link>                
-                <Link className="footer-link col-4" to="/balance">Reload Your Balance</Link>    
-            </Row> 
-        </Container>
-
+            <div className="empty-cell"></div>    
+        </footer>
     )
 }
 
