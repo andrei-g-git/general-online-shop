@@ -12,7 +12,7 @@ import UserLogin from '../routes/UserLogin';
 import SearchPage from '../routes/SearchPage';
 import '../css/Main.scss';
 
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //test
 import ZedListDelete from './ZedListDelete';
@@ -41,14 +41,14 @@ class Main extends Component {
                 onTouchMove={this.props.handleTouchMove}
                 onTouchEnd={this.handleTouchEnd}
             >
-                {/* <div className="row"> */}
-                    <Navbar //className="col-12"
+                <div className="row">
+                    <Navbar className="col-12"
                         navSliderOpen={this.props.navSliderOpen}>
                     </Navbar>
-                {/* </div> */}
+                </div>
 
-                {/* <div className="row">
-                    <div className="col-sm-12 col-md-9"> */}
+                <div className="row">
+                    <div className="col-sm-12 col-md-9">
                         <Switch>
                             <Route exact path="/">
                                 <FeaturedContent
@@ -104,19 +104,19 @@ class Main extends Component {
                                 </FeaturedContent>
                             </Route>
                         </Switch>
-                    {/* </div> */}
+                    </div>
 
-                    {/* <div className="col-3 d-none d-md-block">
+                    <div className="col-3 d-none d-md-block">
                         <ZedListDelete/>
-                    </div>   */}   
+                    </div>     
 
-                {/* </div> */}
+                </div>
 
-                {/* <div className="row">
-                    <div className="col-12"> */}
+                <div className="row">
+                    <div className="col-12">
                         <Footer></Footer>   
-                    {/* </div>
-                </div> */}
+                    </div>
+                </div>
 
             </div>
         )
@@ -127,8 +127,6 @@ class Main extends Component {
             url: "/api/products",
             //url: "https://localhost:8080/ecommercePHP/server.php",
             //url: "server.php",
-            //url: "C:/xampp/htdocs",
-            //url: "http://localhost/server.php",
             type: "GET",
             success: (response) => this.props.fetchProducts(response),
             dataType: "json"
