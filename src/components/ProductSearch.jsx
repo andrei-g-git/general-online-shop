@@ -1,23 +1,15 @@
 import React from 'react';
-//import Search from './Search'; //this would actually redirect me to the same page...
+import Search from './Search';
 import SearchForm from './SearchForm';
 import { connect } from 'react-redux';
 import * as actions from '../js/actions';
 import { withRouter } from 'react-router-dom';
-import searchIcon from "../assets/icons/search-icon-png-9973.png";
-
-import '../css/ProductSearch.scss'; //actually on the right
 
 class ProductSearch extends React.Component {
     render(){
         return (
             <div id="product-search">
-                {/* <Search></Search> */}
-                <img id="search-icon"
-                    src={searchIcon}
-                    alt="n/a"
-                    //style={{width:"2rem"}}
-                />
+                <Search></Search>
                 <SearchForm route="/api/products/search"
                     notify={this.handleSearchQuery}
                 />
@@ -27,8 +19,7 @@ class ProductSearch extends React.Component {
 
     handleSearchQuery = (searchResult) => {
         this.props.fetchQuery(searchResult);
-        this.props.history.push("/search-result");
-        const bp = 123;
+        this.props.history.push("/search/result");
     }
 }
 

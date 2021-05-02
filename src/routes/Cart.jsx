@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import * as actions from '../js/actions';
 import CartItem from '../components/CartItem';
-/* import Footer from '../components/Footer'; */
+import Footer from '../components/Footer';
 
 let $ = require('jquery');
 class Cart extends React.Component{
@@ -45,7 +45,7 @@ class Cart extends React.Component{
                                 <div></div>
                 }
 
-                {/* <Footer></Footer> */}
+                <Footer></Footer>
             </div>
         )
     }

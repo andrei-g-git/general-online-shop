@@ -85,7 +85,7 @@ class Main extends Component {
                     </Route>
 
                     {/* THIS ISN"T ROUTING although the link changes --- TEST THE MATCHERS */}
-                    <Route exact path="/search-result"> {/* for some reason /search/result as a route or link don't work, gotta use hyphen ... dunno */}
+                    <Route path="/search/result"> {/* //the result string should be dynamic : the search query formatted with hyphens */}
                         <FeaturedContent
                                 products={this.props.searchedProducts}
                                 currencyPrefix={this.currency.prefix} 
@@ -94,7 +94,6 @@ class Main extends Component {
                     </Route>
                 </Switch>
 
-                <Footer></Footer>
             </div>
         )
     }

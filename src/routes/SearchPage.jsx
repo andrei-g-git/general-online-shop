@@ -1,7 +1,7 @@
 import React from 'react';
-/* import Footer from '../components/Footer'; */ //this should be nested once in Main, not in every <route className=""></route>
+import Footer from '../components/Footer'; //this should be nested once in Main, not in every <route className=""></route>
 import ProductSearch from '../components/ProductSearch';
-//import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 function SearchPage() {
     return (
@@ -16,9 +16,9 @@ function SearchPage() {
 
             <ProductSearch></ProductSearch>
 
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     )
 }
 
-export default SearchPage;//withRouter(SearchPage);
+export default withRouter(SearchPage);
