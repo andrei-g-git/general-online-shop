@@ -1,10 +1,6 @@
 #footer{
     // position:absolute;
     // bottom: 0;
-    // width: 96%; //I'm just eyeballing this, if it's 100% the body becomes wider than the view port
-
-    justify-self: end;
-
 
     display: grid;
     grid-auto-flow: column;
@@ -16,6 +12,10 @@
     padding: 0.5rem;
 
     margin-top: 1rem;
+    //position: absolute;
+
+    //bottom: 0; //this is the bottom of the view port not the bottom of the container
+    //width: 100%; //this does something strange to the overall width of the app
 }
 
 .footer-link{
