@@ -1,0 +1,119 @@
+[33mcommit 13e51b0ebfaf307987942cd41c1ecc6d18c93681[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Sat May 1 19:14:07 2021 +0300
+
+    started adding bootstrap, broke some stuff
+
+[33mcommit 5939feb44d4190b8ec7d15760a0066c977c5c67e[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Sun Apr 25 15:05:33 2021 +0300
+
+    fixed footer ovelapping with the content
+
+[33mcommit 38d1cea21ecab13b016a0b1c2112aceafa59561c[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Sun Apr 25 13:03:09 2021 +0300
+
+    search results route bug fix
+
+[33mcommit f78ec8e74d3a16e612b9e1f62bda14673fcea373[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Sat Apr 24 15:04:28 2021 +0300
+
+    added product search, buggy
+
+[33mcommit 796d3a132d3a9333f5f2c18e1ea317035c71862d[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Thu Apr 22 18:55:37 2021 +0300
+
+    can purchase with or without sign-in, needs work
+
+[33mcommit b6a1325d4b59588345b91a1d6ea097e480856d1f[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Wed Apr 14 16:23:49 2021 +0300
+
+    rearranged some files
+
+[33mcommit 1696bbabe14da0a4d25c80cc59c5dd18e1cf24e2[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Tue Apr 13 16:51:10 2021 +0300
+
+    added quantity modification functionality
+
+[33mcommit f65aebcc373c393737ff864d2b7726d69b33cbd2[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Tue Apr 13 13:25:47 2021 +0300
+
+    started cart item quantity fetch
+
+[33mcommit c8df7d1f5a64fa97f55b4773415271417348acfb[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Tue Apr 13 11:03:30 2021 +0300
+
+    fixed cart backend, started cart item component
+
+[33mcommit 3d420c9f0518fe3327129a64885628c2ab4ceea2[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Mon Apr 12 22:03:38 2021 +0300
+
+    rough cart almost done
+
+[33mcommit 4e7104b2e7987f66e3723f9fc5f3df675d65f6ca[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Fri Apr 9 19:02:51 2021 +0300
+
+    navbar bug and ui fixes
+
+[33mcommit 3b7e55613c961831a6d424a801b37646b5d2817b[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Fri Apr 9 14:50:18 2021 +0300
+
+    added footer links
+
+[33mcommit a4d033744e0dbf224c3aaaa5d3181ac457c86b4d[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Thu Apr 8 13:23:30 2021 +0300
+
+    styled login page
+
+[33mcommit 2c2270e1df39bbf9d4e6cdafd4fd0ea5571d9b83[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Thu Apr 8 11:52:57 2021 +0300
+
+    can log in
+
+[33mcommit 25f264105c40cc5454fb3e727dfa4510d43b1b6a[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Wed Apr 7 20:38:17 2021 +0300
+
+    added nav menu slider, started login server and client functionality
+
+[33mcommit e8006d00896be850ad24dee3f6a690229cb93c57[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Wed Apr 7 15:16:55 2021 +0300
+
+    product cards and page preliminarily finished
+
+[33mcommit 171a81bdd5e78b5844ed105bcbecb4569eab53ff[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Tue Apr 6 21:37:21 2021 +0300
+
+    added product page without css
+
+[33mcommit 760d2954388229eda8dbfb815606990b600d5de7[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Tue Apr 6 19:39:42 2021 +0300
+
+    added navbar, started product routing
+
+[33mcommit bdc03ec415169d4f2379c7a5ed9eab1d184ed4ce[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Mon Apr 5 19:27:19 2021 +0300
+
+    initial commit redo
+
+[33mcommit 95919fdc3713679baab098c03cad7ee7c6f47a85[m
+Author: humpty dumpty <spyker5@creationuq.com>
+Date:   Mon Apr 5 19:03:23 2021 +0300
+
+    first commit

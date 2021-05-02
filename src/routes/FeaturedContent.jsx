@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import '../css/FeaturedContent.scss';
 /* import Footer from '../components/Footer'; */
-//test
-import RouterDebugger from '../components/RouterDebugger';
+
 
 let $ = require('jquery');
 

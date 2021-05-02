@@ -4,7 +4,7 @@ import SiteLogo from './SiteLogo';
 import Search from './Search';
 import CartIcon from './CartIcon';
 import UserLoginIcon from './UserLoginIcon';
-//import '../css/Navbar.scss';
+import '../css/Navbar.scss';
 
 //test
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,27 +20,27 @@ function Navbar(props) {
     return (
         
         <div>
-            <nav className="navbar navbar-default" 
+            <nav //className="navbar navbar-default" 
                 id="nav-bar"
             >
                     <HamburgerMenu></HamburgerMenu>
 
-                <div className="navbar-brand">
+                {/* <div className="navbar-brand"> */}
                     <SiteLogo></SiteLogo>
 
-                </div> 
+                {/* </div> */} 
 
-                <div className="nav-item"></div>
+                {/* <div className="nav-item"></div> */}
                 {/* <nav id="right-hand-icons"> */}
-                    <div className="nav-item">
+                    {/* <div className="nav-item"> */}
                         <Search></Search>
-                    </div>
-                    <div className="nav-item">
+                    {/* </div> */}
+                    {/* <div className="nav-item"> */}
                         <CartIcon></CartIcon>
-                    </div>
-                    <div className="nav-item">
+                    {/* </div> */}
+                    {/* <div className="nav-item"> */}
                         <UserLoginIcon></UserLoginIcon>
-                    </div>
+                    {/* </div> */}
                 {/* </nav> */}
             </nav>
 
