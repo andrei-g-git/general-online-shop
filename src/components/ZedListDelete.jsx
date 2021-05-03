@@ -10,6 +10,7 @@ function zListDelete() {
             <li>list element</li>
             <li>list element</li>
             <li>list element</li>
+            <li>list element</li>
         </ul>
     </div>
     )

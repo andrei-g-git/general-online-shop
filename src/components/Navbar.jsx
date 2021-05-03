@@ -16,8 +16,8 @@ function Navbar(props) {
     
     return (
         
-        <div> 
-            <nav //can't figure out how to add bootstrap to this, the icons won't fit...
+        <div>
+            <nav
                 id="nav-bar"
             >
                 <HamburgerMenu></HamburgerMenu>
