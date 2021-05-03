@@ -1,24 +1,25 @@
 import * as actionTypes from './actionTypes';
+import { Product, Cart } from '../interfaces/Data';
 
-interface Product { //these can be reusable, should be in separate files
-    id: number,
-    title: string,
-    price: number,
-    discount: number,
-    description: string,
-    category: string,
-    image: string,
-    rating: number    
-}
+// interface Product { //these can be reusable, should be in separate files
+//     id: number,
+//     title: string,
+//     price: number,
+//     discount: number,
+//     description: string,
+//     category: string,
+//     image: string,
+//     rating: number    
+// }
 
-interface Cart {
-    addToCartId: number,
-    cartId: number,
-    userId: number,
-    orderDate: string,
-    productId: number,
-    quantity: number
-}
+// interface Cart {
+//     addToCartId: number,
+//     cartId: number,
+//     userId: number,
+//     orderDate: string,
+//     productId: number,
+//     quantity: number
+// }
 
 export const productsLoaded = (products: Product[]) => {
     return {
