@@ -4,7 +4,10 @@ import SiteLogo from './SiteLogo';
 import Search from './Search';
 import CartIcon from './CartIcon';
 import UserLoginIcon from './UserLoginIcon';
-import '../css/Navbar.scss';
+//import '../css/Navbar.scss';
+
+//test
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar(props) {
     let navSliderId = "nav-slider";
@@ -17,16 +20,28 @@ function Navbar(props) {
     return (
         
         <div>
-            <nav
+            <nav className="navbar navbar-default" 
                 id="nav-bar"
             >
-                <HamburgerMenu></HamburgerMenu>
-                <SiteLogo></SiteLogo>
-                <div id="right-hand-icons">
-                    <Search></Search>
-                    <CartIcon></CartIcon>
-                    <UserLoginIcon></UserLoginIcon>
-                </div>
+                    <HamburgerMenu></HamburgerMenu>
+
+                <div className="navbar-brand">
+                    <SiteLogo></SiteLogo>
+
+                </div> 
+
+                <div className="nav-item"></div>
+                {/* <nav id="right-hand-icons"> */}
+                    <div className="nav-item">
+                        <Search></Search>
+                    </div>
+                    <div className="nav-item">
+                        <CartIcon></CartIcon>
+                    </div>
+                    <div className="nav-item">
+                        <UserLoginIcon></UserLoginIcon>
+                    </div>
+                {/* </nav> */}
             </nav>
 
             <div id={sliderContainerId}> 
@@ -36,7 +51,7 @@ function Navbar(props) {
                     <h1>Stuff</h1>
                 </ul>
             </div>
-    </div>
+        </div>
     )
 }
 
