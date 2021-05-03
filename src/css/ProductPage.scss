@@ -2,42 +2,41 @@
 @import 'Mixins.scss';
 
 #product-page{
-    // display: grid;
-    // //grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
-    // grid-template-columns: 30% 10% 20% 10% 30%;
-    // grid-template-rows: auto;
-    // grid-template-areas: 
-    //     "title title title title title"
-    //     " pic pic pic pic pic "
-    //     "rating . . . price"
-    //     " . btn btn btn ."
-    //     " desc desc desc desc desc ";
+    display: grid;
+    //grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+    grid-template-columns: 30% 10% 20% 10% 30%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "title title title title title"
+        " pic pic pic pic pic "
+        "rating . . . price"
+        " . btn btn btn ."
+        " desc desc desc desc desc ";
 
-    //margin: 0 $app-horizontal-margin;
+    margin: 0 $app-horizontal-margin;
     padding-top: 1rem + $post-navbar-y-offset + $navbar-padding;
 }
 
-// #product-title{
-//     text-align: center;
-//     grid-area: title;
-// }
+#product-title{
+    text-align: center;
+    grid-area: title;
+}
 
-// #product-pic{
-//     //object-fit: contain;
-//     width: 80%;
-//     grid-area: pic;
-//     justify-self: center;
-//     padding: 5% 0;
-//     // grid-column: 1 / span 5;
-//     // grid-row: 2 / span 1;
-// }
+#product-pic{
+    //object-fit: contain;
+    width: 80%;
+    grid-area: pic;
+    justify-self: center;
+    padding: 5% 0;
+    // grid-column: 1 / span 5;
+    // grid-row: 2 / span 1;
+}
 
 #rating-container{
     grid-area: rating;
     display: flex;
     flex-direction: column;
     //margin-left: 1rem;
-    align-items: center; //in tandem with bootstrap, because I can't get it to center with d-flex justify-content-center etc
 }
 
 #rating-label{
@@ -78,9 +77,9 @@
     color: red;
 }
 
-// #product-description{
-//     grid-area: desc;
-// }
+#product-description{
+    grid-area: desc;
+}
 
 #add-to-cart-wrapper{
     grid-area: btn;
@@ -88,17 +87,11 @@
     @include centerColumnItems();
 }
 
-// #add-to-cart{
-//     @include standardCenteredButton();
-
-//     &> a{
-//         text-decoration: none;
-//         color: white;
-//     }
-// }
-
-//bootstrap override
 #add-to-cart{
-    background-color: $CTA-color;
-    border-color: $CTA-color;
+    @include standardCenteredButton();
+
+    &> a{
+        text-decoration: none;
+        color: white;
+    }
 }
