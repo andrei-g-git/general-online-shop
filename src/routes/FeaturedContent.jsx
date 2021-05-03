@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import '../css/FeaturedContent.scss';
-/* import Footer from '../components/Footer'; */
-//test
-import RouterDebugger from '../components/RouterDebugger';
 
 let $ = require('jquery');
 
-function FeaturedContent(props) {
+function FeaturedContent(props){
 
     let [, setState] = useState();
     return (
@@ -21,7 +18,7 @@ function FeaturedContent(props) {
                                     key={product.id}
                                     currencyPrefix = {props.currencyPrefix}
                                     product={product}
-                                    notify={() => {cardWasClicked(product.id); setState({})}} //forgot why I'm setting the state...
+                                    notify={() => {cardWasClicked(product.id); setState({})}} //forgot why I'm setting the state...  maybe it's to force the page to re-render...
                                 >
                                 </ProductCard>   
                             )
@@ -30,8 +27,6 @@ function FeaturedContent(props) {
                     
                 } 
             </ul>
-
-            {/* <Footer></Footer> */}
             
         </div>
     )
