@@ -5,15 +5,9 @@ import "../css/SiteLogo.scss";
 
 function SiteLogo(props) {
     return (
-/*         <Link id="site-logo"
-            role="button"
-            to="/"
-            onClick={() => test(props)}
-        > */
-        <a id="site-logo" href="/"> {/* I dunno man, I just dunno */}
+        <a id="site-logo" href="/"> 
             <h1>eShop</h1>
         </a>
-        /* </Link> */
     )
 }
 
